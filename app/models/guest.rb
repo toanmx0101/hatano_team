@@ -1,4 +1,10 @@
 class Guest < ApplicationRecord
   has_many :feedbacks
   has_many :orders
+  validates_associated :feedbacks
+  validates_associated :orders
+  validates :name, presence: true, length: {minimum: 6, maximum: 30}
+  validates :address, presence: true
+  validates :phone, presence: true, length: {minimum: 9, maximum: 15},
+    numericality: true
 end
