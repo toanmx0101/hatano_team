@@ -1,6 +1,6 @@
 class Guest < ApplicationRecord
-  has_many :feedbacks
-  has_many :orders
+  has_many :feedbacks, dependent: :destroy
+  has_many :orders, dependent: :destroy
   validates_associated :feedbacks
   validates_associated :orders
   validates :name, presence: true, length: {minimum: 6, maximum: 30}
