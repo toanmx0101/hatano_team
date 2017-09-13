@@ -7,4 +7,15 @@ class Guest < ApplicationRecord
   validates :address, presence: true
   validates :phone, presence: true, length: {minimum: 9, maximum: 15},
     numericality: true
+
+    #== schema infomation
+    #
+    #Table name: guests
+    #
+    #name:string
+    #email: string
+    #phone: float
+    #address: string
+    #create_at: datetime
+    #update_at: datetime
 end
