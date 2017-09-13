@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.float :total_price
       t.string :status
       t.datetime :date_order
-      t.references :guess, foreign_key: true
+      t.references :guest, foreign_key: true
 
       t.timestamps
     end

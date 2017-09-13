@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907092224) do
+ActiveRecord::Schema.define(version: 20170913133901) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20170907092224) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.string "content"
-    t.integer "guess_id"
+    t.integer "guest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["guess_id"], name: "index_feedbacks_on_guess_id"
+    t.index ["guest_id"], name: "index_feedbacks_on_guest_id"
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
@@ -43,18 +43,20 @@ ActiveRecord::Schema.define(version: 20170907092224) do
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_id"
     t.index ["order_id"], name: "index_order_details_on_order_id"
+    t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.float "total_price"
     t.string "status"
     t.datetime "date_order"
-    t.integer "guess_id"
+    t.integer "guest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["guess_id"], name: "index_orders_on_guess_id"
+    t.index ["guest_id"], name: "index_orders_on_guest_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -95,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170907092224) do
     t.boolean "sex"
     t.string "address"
     t.boolean "role"
+    t.float "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
