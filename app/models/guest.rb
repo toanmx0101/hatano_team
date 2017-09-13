@@ -1,3 +1,14 @@
+#== schema infomation
+#
+#Table name: guests
+#
+#name:string
+#email: string
+#phone: float
+#address: string
+#create_at: datetime
+#update_at: datetime
+
 class Guest < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :orders, dependent: :destroy

@@ -1,13 +1,26 @@
-.main{:align => "center"}
-  %p.su Sign in
-  %form.form1{:align => "center"}
-    %input.first{:autofocus => "", :placeholder => "Email Address", :required => "", :type => "text"}/
-    %input.pass1{:placeholder => "Password", :required => "", :type => "password"}/
+%head
+  %title Sign in
 
-    %input.submit{:align => "center", :type => "submit", :value => "Sign in"}/
-.bottom
-  %p.mb{:align => "center"}
-    %strong -
-    Designed By
-    %a{:href => "https://www.khaledmneimneh.me", :target => "_blank"}
-      %span.mb-2 An Cap An Trom in uplaps.com
+%body
+  .main{align: "center"}
+    %p.su Sign in
+    - flash.each do |message_type, message|
+      %div{class: "alert alert-#{message_type}"}= message
+      %br/
+    = form_for(:session, url: user_session_path) do |f|
+      = f.email_field :email, autofocus: true, class: "mail", placeholder: "Email Address"
+      %br/
+      = f.password_field :password, autocomplete: "off", class: "pass", placeholder: "Choose Password"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      = f.submit "Log in", class: "submit"
+    %br/
+    = render "devise/shared/links"
+  .bottom
+    %p.mb{align: "center"}
+      %strong -
+      Designed By
+      %a{href: "https://www.khaledmneimneh.me", target: "_blank"}
+        %span.mb-2 Khaled Mneimneh
