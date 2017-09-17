@@ -1,3 +1,11 @@
+#== Schema Infomation
+#
+#Table Name: categorys
+#
+#category_name: string
+#created_at: datetime
+#updated_at: datetime
+
 class Category < ApplicationRecord
   has_many :products, dependent: :destroy
   validates_associated :products

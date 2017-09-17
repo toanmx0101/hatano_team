@@ -1,3 +1,14 @@
+#==schema infomation
+#
+##table name: order_details
+#
+#order_id: integer
+#product_id: integer
+#quantity: integer
+#price: float
+#creat_at: datetime
+#update_at: datetime
+
 class OrderDetail < ApplicationRecord
   belongs_to :order
   # validates :order, absense: true
