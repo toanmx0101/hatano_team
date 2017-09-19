@@ -1,0 +1,36 @@
+- content_for :header do
+  = render "partials/header"
+- content_for :footer do
+  = render "partials/footer"
+#contact
+  %h1.contactt BE IN TOUCH
+  .contactM
+    .contactNavBar
+      %p If you don't see what you're looking for, or would like us to work with you on a custom design, feel free to be in touch!
+      %br/
+      %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+        %img{:alt => "Icon", :src => "/assets/fb.png"}/
+      %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+        %img{:alt => "Icon", :src => "/assets/tw.png"}/
+      %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+        %img{:alt => "Icon", :src => "/assets/gg.png"}/
+    .contactContent
+      %input{:name => "name", :placeholder => "Name", :style => " width: 400px;", :type => "text"}/
+      %br/
+      %input{:name => "mail", :placeholder => "Email", :style => " width: 400px;", :type => "mail"}/
+      %br/
+      %input{:name => "subject", :placeholder => "Subject", :style => " width: 400px;", :type => "text"}/
+      %br/
+      %input{:name => "message", :placeholder => "Message", :style => "min-height: 130px; width: 400px;", :type => "text"}/
+    .contactRight
+      %p ADDRESS
+      %p
+        500 Terry Francois St.
+        = succeed "San" do
+          %br/
+      %br/
+      %p TEL
+      %p ﻿123-456-7890
+      %br/
+      %p EMAIL
+      %p info@mysite.com

@@ -1,0 +1,39 @@
+- content_for :header do
+  = render "partials/header"
+- content_for :footer do
+  = render "partials/footer"
+.headerbg
+  %img{:alt => "Icon", :src => "/assets/cc.png"}/
+  #navBar
+    %ul.mainNav
+      %li= link_to "Hot & Sale", root_path
+      %li= link_to "Shirts",  static_pages_shirt_path
+      %li= link_to "Shoes",  static_pages_shoe_path
+      %li= link_to "Glasses",  static_pages_glasse_path
+  .main-container
+    .container-fluid
+      .row
+        - @products.each do |product|
+          .col-sm-3
+            %article.col-item
+              .photo
+                .options-cart-round
+                  %button.btn.btn-default{:title => "Sale"}
+                    %span.fa.fa-shopping-cart SALE
+                  .demo
+                    %figure.imghvr-slide-up
+                      %img{:alt => "example-image", :src => "https://dimg.dillards.com/is/image/DillardsZoom/nav/michael-michael-kors-berkley-sandals/04678131_zi_luggage.jpg"}
+                        %figcaption
+                          %h3 QUICK VIEW
+                        %a{:href => "javascript:;"}
+                    .info
+                      .price-details.col-md-6
+                        %p.idsp= product.code
+                        %p.details
+                          = product.product_name
+                        %span.price-new
+                          $#{product.price}
+                        %span.price-sale $10.00
+                        
+    .container
+      = paginate @products

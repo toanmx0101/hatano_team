@@ -1,0 +1,39 @@
+- content_for :header do
+  = render "partials/header"
+- content_for :footer do
+  = render "partials/footer"
+.headerbg
+  %img{:alt => "Icon", :src => "/assets/cc.png"}/
+  #navBar
+    %ul.mainNav
+      %li= link_to "Hot & Sale", root_path
+      %li= link_to "Shirts",  static_pages_shirt_path
+      %li= link_to "Shoes",  static_pages_shoe_path
+      %li= link_to "Glasses",  static_pages_glasse_path
+  .main-container
+    .container-fluid
+      .row
+        - @products.each do |product|
+          .col-sm-3
+            %article.col-item
+              .photo
+                .options-cart-round
+                  %button.btn.btn-default{:title => "Sale"}
+                    %span.fa.fa-shopping-cart   SALE
+                  .demo
+                    %figure.imghvr-slide-up
+                      %img{:alt => "example-image", :src => "https://static.wixstatic.com/media/9c608a_776ec1c844b5443a80042b83c52f0401.jpg/v1/fill/w_250,h_250,q_85,usm_0.66_1.00_0.01/9c608a_776ec1c844b5443a80042b83c52f0401.jpg"}
+                        %figcaption
+                          %h3 QUICK VIEW
+                          %p.idsp= product.code
+                          %p.details
+                            = product.product_name
+                          %p Thong Tin Chi Tiet
+                        %a{:href => "javascript:;"}
+                    .info
+                      .price-details.col-md-6
+                        %span.price-new
+                          $#{product.price}
+                        %span.price-sale $10.00
+    .container
+      = paginate @products
