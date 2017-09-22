@@ -1,8 +1,8 @@
 %head
   %title Sign in
 
-%body.body-session
-  .main-session{align: "center"}
+%body.body-signin
+  .main-signin{align: "center"}
     %p.su Sign in
     - flash.each do |message_type, message|
       %div{class: "alert alert-#{message_type}"}= message

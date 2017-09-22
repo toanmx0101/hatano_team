@@ -1,0 +1,37 @@
+<head>
+  <title>Sign up</title>
+</head>
+<body class="body-signup">
+  <div align="center" class="main-signup">
+    <p class="su">Sign Up</p>
+    <%= form_for @user, url: user_registration_path, method: :post do |f|%>
+      <%= render "devise/shared/error_messages" %>
+      <%= f.text_field :name, autofocus: true, placeholder: "Full Name", class: "text-field" %>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email adress", class: "mail" %>
+      <%= f.password_field :password, autofocus: true, placeholder: "Password", class: "pass" %>
+      <%= f.password_field :password_confirmation, autofocus: true, placeholder: "password confirmation", class: "pass" %>
+
+      <%= f.text_field :address, autofocus: true, placeholder: "Address", class: "text-field" %>
+      <%= f.text_field :phone, autofocus: true, placeholder: "Phone number", class: "text-field" %>
+      <%= f.date_field :birth_day, autofocus: true, placeholder: "Bir thday", class: "text-field" %>
+      <br>
+      <%= f.label :gender, "Gender:" %>
+      <%= f.label :male, "male"%>
+      <%= f.radio_button :sex, "true", checked: true %>
+      <%= f.label :female, "female"%>
+      <%= f.radio_button :sex, "false" %>
+      <br />
+      <%= f.submit "Signup", class: "submit" %>
+    <% end %>
+    <br>
+    <%= render "devise/shared/links" %>
+  </div>
+    <p align="center" class="mb">
+      <strong>-</strong>
+      Designed By
+      <a href="https://www.khaledmneimneh.me" target="_blank">
+        <span class="mb-2">Khaled Mneimneh</span>
+      </a>
+    </p>
+  </div>
+</body>

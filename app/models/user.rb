@@ -34,5 +34,4 @@ class User < ApplicationRecord
   validates :birth_day, presence: true
   validates :sex, presence: true
   validates :address, presence: true
-  validates :role, presence: true
 end

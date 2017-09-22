@@ -1,12 +1,31 @@
-.body-session {
+.body-signin {
   background-color: #cfd8dc;
   background-image: url("/assets/background-signin.svg");
   font-family: 'Ubuntu', sans-serif;
 }
 
-.main-session {
+.body-signup {
+  background-color: #cfd8dc;
+  background-image: url("/assets/background-signin.svg");
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-signup {
   width: 500px;
-  height: 650px;
+  height: 850px;
+  margin: 4em auto;
+  background-color: #ECEFF1;
+  border-radius: 20px;
+  padding-top: 18.344px;
+  padding-bottom: 6%;
+  margin-top: 3%;
+  box-shadow: 0px 11px 14px 1px rgba(0, 0, 0, 0.08);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-signin {
+  width: 500px;
+  height: 450px;
   margin: 4em auto;
   background-color: #ECEFF1;
   border-radius: 20px;
@@ -26,6 +45,23 @@
 }
 
 .mail {
+  width: 80%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.text-field {
   width: 80%;
   color: rgb(38, 50, 56);
   font-weight: 700;
@@ -108,4 +144,22 @@ a {
 span.mb-2:hover {
   color: #263238;
 }
+
+#error_explanation {
+  color: red;
+  ul {
+    list-style: none;
+    color: red;
+    margin: 0 0 90px 0;
+
+  }
+}
+
+.li-error {
+  color: black;
+  list-style: none;
+  text-align: left;
+  padding-left: 125px;
+}
+
 
