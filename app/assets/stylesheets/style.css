@@ -1,10 +1,10 @@
-body {
+.body-signin {
   background-color: #cfd8dc;
   background-image: url("/assets/background-signin.svg");
   font-family: 'Ubuntu', sans-serif;
 }
 
-.main {
+.main-signin {
   width: 500px;
   height: 650px;
   margin: 4em auto;
