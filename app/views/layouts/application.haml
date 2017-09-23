@@ -7,4 +7,22 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    #menu
+      %ul.headerNav
+        %li= link_to "SHOP", root_path
+        %li= link_to "ABOUT",  static_pages_about_path
+        %li= link_to "WHERETOBUY",  static_pages_wtbuy_path
+        %li= link_to "FAQ",  static_pages_faq_path
+        %li= link_to "CONTACT",  static_pages_contact_path
+
     = yield
+    %footer
+      Producted by Hanato TeamWork !!!
+      .imgFooter
+        %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+          %img{:alt => "Icon", :src => "/assets/fb.png"}/
+        %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+          %img{:alt => "Icon", :src => "/assets/tw.png"}/
+        %a{:href => "https://www.facebook.com/tanvo.traitim.796", :target => "_blank"}
+          %img{:alt => "Icon", :src => "/assets/gg.png"}/
+
