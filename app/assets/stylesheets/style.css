@@ -10,6 +10,12 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+.body-edit-user {
+  background-color: #cfd8dc;
+  background-image: url("/assets/background-signin.svg");
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .main-signup {
   width: 500px;
   height: 850px;
@@ -26,6 +32,19 @@
 .main-signin {
   width: 500px;
   height: 450px;
+  margin: 4em auto;
+  background-color: #ECEFF1;
+  border-radius: 20px;
+  padding-top: 18.344px;
+  padding-bottom: 6%;
+  margin-top: 3%;
+  box-shadow: 0px 11px 14px 1px rgba(0, 0, 0, 0.08);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-edit-user {
+  width: 500px;
+  height: 850px;
   margin: 4em auto;
   background-color: #ECEFF1;
   border-radius: 20px;
