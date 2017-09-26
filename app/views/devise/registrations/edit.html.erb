@@ -1,43 +1,33 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<head>
+  <title>Edit user</title>
+</head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<body class="body-edit-user">
+  <div align="center" class="main-edit-user">
+    <p class="su">Edit <%= @user.name %></p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.text_field :name, autofocus: true, placeholder: "Full Name", class: "text-field" %>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email adress", class: "mail" %>
+      <%= f.password_field :password, autofocus: true, placeholder: "Password", class: "pass" %>
+      <%= f.password_field :password_confirmation, autofocus: true, placeholder: "password confirmation", class: "pass" %>
+      <%= f.password_field :current_password, autofocus: true, placeholder: "current password", class: "pass" %>
+      <%= f.text_field :address, autofocus: true, placeholder: "Address", class: "text-field" %>
+      <%= f.text_field :phone, autofocus: true, placeholder: "Phone number", class: "text-field" %>
+      <%= f.date_field :birth_day, autofocus: true, placeholder: "Bir thday", class: "text-field" %>
+      <br>
+      <%= f.label :gender, "Gender:" %>
+      <%= f.label :male, "male"%>
+      <%= f.radio_button :sex, "true", checked: true %>
+      <%= f.label :female, "female"%>
+      <%= f.radio_button :sex, "false" %>
+      <br>
+      <%= f.submit "Edit", class: "submit" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
+
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "submit" %></p>
+
+    <%= link_to "Back", :back %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</body>
