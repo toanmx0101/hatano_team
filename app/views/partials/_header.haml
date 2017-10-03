@@ -1,0 +1,12 @@
+#menu
+  %ul.headerNav
+    %li= link_to "SHOP", root_path
+    %li= link_to "ABOUT",  static_pages_about_path
+    %li= link_to "WHERETOBUY",  static_pages_wtbuy_path
+    %li= link_to "FAQ",  static_pages_faq_path
+    %li= link_to "CONTACT",  static_pages_contact_path
+    %li.signin= link_to "SignIn",  new_user_session_path
+    %li.signup= link_to "SignUp",  new_user_registration_path
+    %li.addtocart 
+      %a{:href => "#"}
+        %img{:src => "https://www.nopcommerce.com/images/thumbs/0003726_400.png"}
